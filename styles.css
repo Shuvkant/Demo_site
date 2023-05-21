@@ -75,21 +75,33 @@ span{
 
  }
  .images img{
-     height: 100%;
-     position: absolute;
-     left: 50%;
-     bottom: 0;
-     transform: translateX(-50%);
-     transition: bottom 1s, left 1s;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
 
- }
+.images:hover .shape{
+    bottom: 40px;
+}
 
-
- .images :hover .shape{
-     bottom: 40px;
-
- }
-
- .images:hover .boy{
+.images:hover .girl{
     left: 45%;
- }
+}
+
+.social{
+    margin-left: 8%;
+    margin-top: 100px;
+}
+
+.social a{
+    font-size: 30px;
+    color: #212121;
+    margin-right: 20px;
+}
+
+.social a:hover{
+    color: orange;
+}
