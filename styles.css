@@ -1,18 +1,37 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-.hero{
-     position: relative;
-     width: 100%;
-     height: 100vh;
-     background: #eff4ed ;
+:root {
+    --primary-color: #edf2fc;
+    --secondary-color: #0b0404;
+    /* --primary-color: #000106; */
+    /* --secondary-color: #eadbdb; */
+}
+
+.dark-theme {
+    --primary-color: #000106;
+    --secondary-color: #eadbdb;
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary-color);
+    font-family: sans-serif;
+    position: relative;
 
 }
 
-nav{
+nav {
     display: flex;
     width: 84%;
     margin: auto;
@@ -21,105 +40,116 @@ nav{
     justify-content: space-between;
 }
 
+nav ul {
+    flex: 1;
+    text-align: right;
+}
 
-nav ul li{
+nav ul li {
     display: inline-block;
     list-style: none;
-    margin:  10px 20px;
+    margin: 10px 20px;
 
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: var(--secondary-color);
     font-weight: bold;
 }
-nav ul li  a:hover{
-color: red;
+
+nav ul li a:hover {
+    color: red;
 }
 
-.detel{
+.detel {
     margin-left: 8%;
     margin-top: 13%;
 }
-.detel h1{
+
+.detel h1 {
     font-size: 50px;
-    color: #212121;
+    color: var(--secondary-color);
     margin-bottom: 20px;
 }
-span{
+
+span {
     color: orange;
 
 }
 
-.detel p{
-    color: #555;
+.detel p {
+    color: var(--secondary-color);
     line-height: 22px;
 }
- .detel a{
-     background: #212121;
-     padding: 10px 18px;
-     text-decoration: none;
-     font-weight: bold;
-     color: #fff;
-     display: inline-block;
-     margin: 30px;
-     border-radius: 20px;
- }
- .images{
-     width: 45%;
-     height:80%;
-     position: absolute;
-     bottom: 0;
-     right: 100px;
 
- }
- .images img{
-     height: 100%;
-     position: absolute;
-     left: 50%;
-     bottom: 0;
-     transform: translateX(-50%);
-     transition: bottom 1s, left 1s;
+.detel a {
+    background: var(--secondary-color);
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: inline-block;
+    margin: 30px;
+    border-radius: 20px;
+}
 
- }
+.images {
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+
+}
+
+.images img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+
+}
 
 
- .images :hover .shape{
-     bottom: 40px;
+.images :hover .shape {
+    bottom: 40px;
 
- }
+}
 
- .images:hover .boy{
+.images:hover .boy {
     left: 45%;
- }
+}
 
 
- .side_bar{
+.side_bar {
     width: 50px;
     height: 100vh;
-    background: linear-gradient( #e07008, #e5ec07);
+    background: linear-gradient(#e07008, #e5ec07);
     position: absolute;
     right: 0;
     top: 0;
 
 }
 
-.menu{
+.menu {
     display: block;
     width: 25px;
     margin: 40px auto 0;
     cursor: pointer;
 }
 
-.links img, .social-links img{
+.links img,
+.social-links img {
     width: 40px;
-    margin:5px auto ;
+    margin: 5px auto;
     cursor: pointer;
-} 
+}
 
 
-.social-links{
+.social-links {
     width: 50px;
     text-align: center;
     position: absolute;
@@ -127,14 +157,15 @@ span{
     transform: translateY(-50%);
 }
 
-.links{
+.links {
     width: 50px;
     text-align: center;
     position: absolute;
     bottom: 30px;
 
 }
-.facebook{
+
+.facebook {
     width: 80px;
     /* height: 50px; */
     width: 70px;
