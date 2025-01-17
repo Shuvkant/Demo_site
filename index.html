@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal_Website</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.js">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         <li><a href="#home">HOME</a></li>
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">PORTFOLIO</a></li>
-        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="#">SERVICES</a></li>
         <li><a href="#">HIRE ME</a></li>
       </ul>
       <!-- <img src="images/moon.png" id="icon"> -->
@@ -46,6 +47,15 @@
       <img src="Images/info.png" alt="">
     </div>
   </div>
+
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-header">Chatbot</div>
+        <div class="chatbox-body" id="chatbox-body"></div>
+        <div class="chatbox-input">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
   <script>
     var icon = document.getElementById("icon");
     icon.onclick = function () {
@@ -58,6 +68,32 @@
       }
 
     }
+    
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (!userInput.trim()) return;
+
+            const chatboxBody = document.getElementById('chatbox-body');
+
+            // Display user message
+            chatboxBody.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
+
+            // Clear input
+            document.getElementById('userInput').value = '';
+
+            // Send to Flask server
+            const response = await fetch('http://127.0.0.1:5000/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            });
+
+            const data = await response.json();
+
+            // Display bot response
+            chatboxBody.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+            chatboxBody.scrollTop = chatboxBody.scrollHeight;
+        }
   </script>
 </body>
 
